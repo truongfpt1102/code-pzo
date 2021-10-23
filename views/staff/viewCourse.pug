@@ -1,0 +1,18 @@
+extends ../layouts/staffMenu
+block content
+ 
+    h1 List Course
+    table.table 
+        tr 
+            th Course Name
+            th 
+        each course in courses
+            tr
+                td
+                    p(href='/staff/viewCourseDetail/' + course.courseName)= course.courseName
+                td
+                    a.btn(href='/staff/updateCourse/'+ course.id) Update 
+                    a.btn(href='/staff/deleteCourse/'+ course.id) Delete 
+
+
+    a.btn(href = '/staff/createCourse/' + category) Create new Course

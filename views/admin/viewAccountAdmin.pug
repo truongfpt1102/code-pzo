@@ -1,0 +1,22 @@
+extends ../layouts/adminMenu
+block content
+    #accordion.mt-5
+        .card
+                h5.mb-0
+                    p(data-toggle='collapse' data-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne')
+                        | Admin Account
+            
+                    table.table.mt-2 
+                            tr 
+                                th Name
+                                th 
+                            each account in accountAdmin
+                                tr
+                                    td= account.name
+                                    td 
+                                        a.btn(href='/admin/updateAccountAdmin/'+ account.username) Update 
+                                        a.btn(href='/admin/deleteAccountAdmin/'+ account.username) Delete                                 
+                    a.btn(href = '/admin/createAccountAdmin') Create account for Admin
+                  
+                 
+

@@ -1,0 +1,17 @@
+extends ../layouts/staffMenu
+block content
+
+    h1 List Trainer with Course
+    table.table 
+        tr 
+            th Course
+            th Trainer Name
+            th 
+        each view in viewTrainers
+            tr
+                td
+                    p(href='/staff/listTrainee/' + view.courseName + ' | ' + view.trainer)= view.courseName
+                td= view.trainer
+                td 
+                    a.btn.btn(href='/staff/deleteTrainer/'+ view.id) Delete 
+    a.btn(href = '/staff/addTrainerToCourse') Add new Trainer to Course

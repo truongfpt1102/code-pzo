@@ -1,0 +1,33 @@
+html 
+    head 
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+    body 
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            a.navbar-brand(href='/staff') Staff 
+            button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+            #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav
+                li.nav-item.active
+                 form(action="/auth/logout" method="GET")
+                                    button Logout
+        .container 
+            .row
+                .col-md-auto
+                    .card.ml-4.mt-4(style='width: 18rem;text-align: center;')
+                     
+                            li.list-group-item= account.role + ": " + account.name
+                           
+                                a.btn(type='button', data-toggle='tooltip', data-placement='right', title='Tooltip on right', href='/staff/updateInformation/' + account.username) Update Infomation
+                          
+                                a.btn(type='button', data-toggle='tooltip', data-placement='right', title='Tooltip on right', href='/staff/viewAccount') Manage Accounts detail
+                          
+                                a.btn(type='button', data-toggle='tooltip', data-placement='right', title='Tooltip on right', href='/staff/viewCourseCategory') Manage Course Category
+                          
+                                a.btn(type='button', data-toggle='tooltip', data-placement='right', title='Tooltip on right', href='/staff/viewTrainer') Assign trainer to course      
+                .col
+                    block content     
+
+    script(src='/index.js')

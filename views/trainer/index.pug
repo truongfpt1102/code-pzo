@@ -1,0 +1,18 @@
+extends ../layouts/trainerMenu
+block content
+
+    h1 List Trainer with Course
+    table.table 
+        tr 
+            th Course
+            th Trainer Name
+          
+        each view in views
+            tr
+                td
+                    p(href='/trainer/viewTopic/' + view.courseName + ' | ' + view.trainer)= view.courseName
+                td= view.trainer
+              
+    
+
+

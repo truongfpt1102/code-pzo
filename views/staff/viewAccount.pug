@@ -1,0 +1,28 @@
+extends ../layouts/staffMenu
+block content
+    #accordion.mt-4                                             
+        .card
+                h5.mb-0
+                    p(data-toggle='collapse' data-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree')
+                        | Trainer Account
+              
+                    table.table.mt-4 
+                            tr 
+                                th Name
+                                th Action
+                            each account in accountTrainer
+                                tr
+                                    td= account.name
+                                    td
+                                        a.btn(href='/staff/updateAccountTrainer/'+ account.username) Update 
+                                        a.btn(href='/staff/deleteAccount/'+ account.username) Delete
+        
+
+    
+    a.btn(href = '/staff/createAccountTrainer') Create new Account for Trainer
+ 
+   
+                 
+                    
+               
+
